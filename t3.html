@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+	<link href="css/fixed-positioning.css" rel="stylesheet" type="text/css" />
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+	<div id="progress" data-0="width:0%;" data-end="width:100%;"></div>
+	
+	<div 	class="slide" data-0="opacity: 1; " data-200="opacity: 0;">
+		<img src="img/DSC_6433.jpg" />
+		<h1 >Appartement T3 Cité de l'Hers</h1>
+	</div>
+
+	<div 	class="slide">
+		<img src="img/DSC_6434.jpg" />
+		<h2>T3, 63m2, au premier étage d'une résidence de 1997</h2>
+		
+	</div>
+
+	<div 	class="slide" >
+		<h2>Salle de bain refaite en 2011</h2>
+		<img src="img/DSC_6403.jpg" />
+	</div>
+
+	<div 	class="slide" >
+		<h2>Chambre 1</h2>
+		<img src="img/DSC_6412.jpg" />
+	</div>
+
+	<div 	class="slide" >
+		<h2>Chambre 2</h2>
+		<img src="img/DSC_6408.jpg" />
+	</div>
+
+	<div 	class="slide" >
+		<h2>Salon</h2>
+		<img src="img/DSC_6415.jpg" />
+	</div>
+
+	<div 	class="slide" >
+		<h2>Salle à manger</h2>
+		<img src="img/DSC_6425.jpg" />
+	</div>
+
+	<div 	class="slide" >
+		<h2>Cuisine suédoise</h2>
+		<img src="img/DSC_6421.jpg" />
+	</div>
+
+	<div 	class="slide" >
+		<h2>Belle pièce à vivre</h2>
+		<img src="img/DSC_6426.jpg" />
+	</div>
+
+	<div 	class="slide" >
+		<h2>Balcon au calme, avec verdure</h2>
+		<img src="img/DSC_6432.jpg" />
+	</div>
+
+	<div 	class="slide" >
+		<h2>Reposant et ombragé</h2>
+		<img src="img/DSC_6433.jpg" />
+	</div>
+
+	<script type="text/javascript" src="js/skrollr.min.js"></script>
+	<script type="text/javascript">
+	var s = skrollr.init({
+		edgeStrategy: 'set',
+		easing: {
+			WTF: Math.random,
+			inverted: function(p) {
+				return 1-p;
+			}
+		}
+	});
+	jQuery(document).ready(function() {
+	});
+	</script>
+</body>
+</html>
