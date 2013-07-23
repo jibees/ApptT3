@@ -1,22 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
 	<link href="css/fixed-positioning.css" rel="stylesheet" type="text/css" />
 	<link href="css/style.css" rel="stylesheet" type="text/css" />
-	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
-	<div id="progress" data-0="width:0%;" data-end="width:100%;"></div>
+	<div id="progress" data-start="width:0%;" data-end="width:100%;"></div>
 	
-	<div 	class="slide" data-0="opacity: 1; " data-200="opacity: 0;">
+	<h1 id="title" data-0="transform:rotate(0deg); opacity: 1;" data-50="transform:rotate(-45deg); opacity: 0;">
+		Appartement T3 63m2 Quartier Château de l'Hers
+	</h1>
+
+	<div id="description-items" class="list-items" >
+		<div id="description-1" class="list-item">1 salon/séjour de 22m2</div>
+		<div id="description-2" class="list-item">1 cuisine américaine aménagée ouverte sur le séjour</div>
+		<div id="description-3" class="list-item">1 balcon de 8m2 sans vis-à-vis donnant sur séjour, cuisine et chambre</div>
+		<div id="description-4" class="list-item">1 coin nuit comprenant : 2 chambres de 10m2 avec placard intégré</div>
+		<div id="description-5" class="list-item">1 coin nuit comprenant : 2 chambres de 10m2 avec placard intégré</div>
+		<div id="description-6" class="list-item">1 salle de bain rénovée et 1 wc séparé</div>
+	</div>
+	<!--
+	<div id="localisation" class="list-item" data-480="left:100%; opacity: 0" data-500="left: 25%; opacity: 1;">
+		<span class="list-item-title" >Localisation</span>
+		<ul>
+			<li data-510="left:100%; opacity: 0" data-520="left: 0%; opacity: 1;">7, rue Claudius Rougenet</li>
+			<li data-510="left:100%; opacity: 0" data-520="left: 0%; opacity: 1;">Ecoles et supermarché dans la même rue</li>
+			<li data-510="left:100%; opacity: 0" data-520="left: 0%; opacity: 1;">accès rocade à 2min</li>
+			<li data-510="left:100%; opacity: 0" data-520="left: 0%; opacity: 1;">Bus ligne 16 (jour et nuit) à 5min à pied</li>
+			<li data-510="left:100%; opacity: 0" data-520="left: 0%; opacity: 1;">crèche, pharmacie, bureau de tabac, boulangerie à 5 min à pied</li>
+		</ul>
+	</div>
+	-->
+
+	<!--
+	<div 	class="slide" data-top="opacity: 1; " data-top-bottom="opacity: 0;">
 		<img src="img/DSC_6433.jpg" />
 		<h1 >Appartement T3 Cité de l'Hers</h1>
 	</div>
 
-	<div 	class="slide">
+	<div 	class="slide" data-top="opacity: 1;" data-top-bottom="opacity: 0;">
 		<img src="img/DSC_6434.jpg" />
 		<h2>T3, 63m2, au premier étage d'une résidence de 1997</h2>
 		
@@ -66,7 +92,7 @@
 		<h2>Reposant et ombragé</h2>
 		<img src="img/DSC_6433.jpg" />
 	</div>
-
+	-->
 	<script type="text/javascript" src="js/skrollr.min.js"></script>
 	<script type="text/javascript">
 	var s = skrollr.init({
@@ -76,10 +102,23 @@
 			inverted: function(p) {
 				return 1-p;
 			}
-		}
+		},
+		smoothScrolling: true
 	});
 	jQuery(document).ready(function() {
+		//updateimgSize();
+		jQuery(window).resize(function() {
+			//updateimgSize();
+		});
 	});
+	function updateimgSize() {
+		var windowHeight = jQuery(window).height();
+		console.log(windowHeight);
+		jQuery(".slide img").load(function(){
+			jQuery(this).css("max-height", windowHeight);
+			//console.log(jQuery(this).width());
+		});
+	}
 	</script>
 </body>
 </html>
